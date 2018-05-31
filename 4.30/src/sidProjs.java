@@ -1,9 +1,14 @@
 import javax.swing.*;
 
+
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -129,18 +134,50 @@ public class sidProjs{
 	public static void display(boolean first) {
 		Stage window = new Stage();
 		
+		Label q1 = new Label("Enter your first Quarter Grade: ");
+		Label w1 = new Label("Enter your First Quarter Grade Weight: ");
+		Label q2 = new Label("Enter your Second Quarter Grade: ");
+		Label w2 = new Label("Enter your Second Quarter Grade Weight: ");
+		Label target = new Label("Enter your Target Percentage: ");
+		
+		TextField qt1 = new TextField();
+		TextField qw1 = new TextField();
+		TextField qt2 = new TextField();
+		TextField qw2 = new TextField();
+		TextField tTarget = new TextField();
+		
+		GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+        grid.setVgap(10);
+        grid.setHgap(12);
+        
+        GridPane.setConstraints(q1, 3, 1);
+        GridPane.setConstraints(qt1, 1, 0);
+        GridPane.setConstraints(w1, 2, 0);
+        GridPane.setConstraints(qw1, 0, 1);
+        GridPane.setConstraints(q2, 1, 1);
+        GridPane.setConstraints(qt2, 2, 1);
+        GridPane.setConstraints(qt2, 2, 1);
+        GridPane.setConstraints(qt2, 2, 1);
+        GridPane.setConstraints(qt2, 2, 1);
+        GridPane.setConstraints(qt2, 2, 1);
+		
+        grid.getChildren().addAll(q1,button2,button3,button4,button5,buttonE);
+		//FinalData
+		
 		window.initModality(Modality.APPLICATION_MODAL);
 		if(first) {
 			window.setScene(FinalData);
 			window.setTitle("Final Grade Calculater - Offline");
 		}
+		
 		else {
 			window.setTitle("Snow Day Percent Calculater!!!");
 			window.setScene(NoSnowDay);
 		}
 		window.setMinWidth(250);
+		window.setMinHeight(250);
+		
 		window.show();
-		
-		
 	}
 }
