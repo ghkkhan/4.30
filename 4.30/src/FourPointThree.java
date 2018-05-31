@@ -5,6 +5,5 @@ public class FourPointThree {
 		// TODO Auto-generated method stub
 		mainGUI.boot(args);
 	}
-//Huzaifa Khan
-//ian stuf
+	//EFWHIUAHIUREI
 }
