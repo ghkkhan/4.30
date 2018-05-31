@@ -7,7 +7,7 @@ public class Grades {
     private double weightSem2;
     private double finalGrade;
     
-    
+    //ewfaiuewhgiuerlaer
     public void setGrades(double sem1,double sem2){
         this.sem1=sem1;
         this.sem2=sem2;
