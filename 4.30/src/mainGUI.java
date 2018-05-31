@@ -110,33 +110,36 @@ public class mainGUI extends Application{
         button1.setOnAction(e -> {
             //Phcs.OperationMakePhysicsLab();
         });
+        
         button2 = new Button("Final grade Calculater");
         button2.setOnAction(e -> {
-        	sidProjs.boot(args);
+        	sidProjs.display(true);
         	primaryStage.hide();
-        	sidProjs.num = 0;
 
         });
+        
         button3 = new Button("Snowday Percent Calculater");
         button3.setOnAction(e -> {
-        	sidProjs.num = 1;
-        	sidProjs.boot(args);
+        	sidProjs.display(false);
         	primaryStage.hide();
+
         });
+        
         button4 = new Button("Social Simulater");
         button4.setOnAction(e -> {
         	primaryStage.hide();
         	//RealChatter r = new RealChatter();
         });
+        
         button5 = new Button("Credits");
         button5.setOnAction(e -> {
         	primaryStage.hide();
         	//Creds.rollCreds();
         });
+        
         buttonE = new Button("EXIT!!!");
         buttonE.setOnAction(e -> {
         	System.exit(0);
-        	//Close Command
         });
         
         GridPane grid = new GridPane();

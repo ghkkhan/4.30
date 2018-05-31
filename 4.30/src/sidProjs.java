@@ -2,6 +2,7 @@ import javax.swing.*;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -121,23 +122,25 @@ public class sidProjs extends JFrame{
 }
 */
 
-public class sidProjs extends Application{
+public class sidProjs{
 	Stage window;
-	Scene FinalData,FinalAnswer,NoSnowDay;
-	public static int num;
-	public static void boot(String[] args) {
-		launch(args);
-	}
-	public void start(Stage primaryStage) throws Exception{
-		window = primaryStage;
-		if(num == 0) {
-			
+	public static Scene FinalData,FinalAnswer,NoSnowDay;
+
+	public static void display(boolean first) {
+		Stage window = new Stage();
+		
+		window.initModality(Modality.APPLICATION_MODAL);
+		if(first) {
 			window.setScene(FinalData);
 			window.setTitle("Final Grade Calculater - Offline");
 		}
-		if(num == 1) {
+		else {
 			window.setTitle("Snow Day Percent Calculater!!!");
 			window.setScene(NoSnowDay);
 		}
+		window.setMinWidth(250);
+		window.show();
+		
+		
 	}
 }
