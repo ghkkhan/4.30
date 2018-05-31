@@ -5,5 +5,5 @@ public class FourPointThree {
 		// TODO Auto-generated method stub
 		mainGUI.boot(args);
 	}
-	//EFWHIUAHIUREI
+	//EFWHIU
 }
