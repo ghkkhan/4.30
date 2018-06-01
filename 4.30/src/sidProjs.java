@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -9,6 +10,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -129,11 +133,13 @@ public class sidProjs extends JFrame{
 
 public class sidProjs{
 	Stage window;
+	private static Grades g=new Grades();
 	public static Scene FinalData,FinalAnswer,NoSnowDay;
 
 	public static void display(boolean first) {
 		Stage window = new Stage();
 		
+		//{ all the stuff between the two braces is for FinalGrade calculater.
 		Label q1 = new Label("Enter your first Quarter Grade: ");
 		Label w1 = new Label("Enter your First Quarter Grade Weight: ");
 		Label q2 = new Label("Enter your Second Quarter Grade: ");
@@ -145,27 +151,40 @@ public class sidProjs{
 		TextField qt2 = new TextField();
 		TextField qw2 = new TextField();
 		TextField tTarget = new TextField();
+		Button fail = new Button("Ready to Fail Miserably?");
+		fail.setOnAction(e -> {
+			g.setGrades(Double.parseDouble(qt1.getText()),Double.parseDouble(qt2.getText()));
+            g.setWeights(Double.parseDouble(qw1.getText()),Double.parseDouble(qw2.getText()));
+            g.setGoal(Double.parseDouble(tTarget.getText()));
+            g.calculateFinal();
+            String ans = "The Final grade you need to get is " + g.getFinalGrade() + "?";
+            window.setScene(new Scene(new Label(ans)));
+			
+		});
 		
 		GridPane grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
         grid.setVgap(10);
         grid.setHgap(12);
         
-        GridPane.setConstraints(q1, 3, 1);
-        GridPane.setConstraints(qt1, 1, 0);
-        GridPane.setConstraints(w1, 2, 0);
-        GridPane.setConstraints(qw1, 0, 1);
-        GridPane.setConstraints(q2, 1, 1);
-        GridPane.setConstraints(qt2, 2, 1);
-        GridPane.setConstraints(qt2, 2, 1);
-        GridPane.setConstraints(qt2, 2, 1);
-        GridPane.setConstraints(qt2, 2, 1);
-        GridPane.setConstraints(qt2, 2, 1);
+        GridPane.setConstraints(q1, 0, 0);
+        GridPane.setConstraints(qt1, 1,0);
+        GridPane.setConstraints(w1, 0,1);
+        GridPane.setConstraints(qw1, 1, 1);
+        GridPane.setConstraints(q2, 0, 2);
+        GridPane.setConstraints(qt2,1, 2);
+        GridPane.setConstraints(w2, 0, 3);
+        GridPane.setConstraints(qw2, 1, 3);
+        GridPane.setConstraints(target, 0, 4);
+        GridPane.setConstraints(tTarget, 1, 4);
+        GridPane.setConstraints(fail, 0, 5);
 		
-        grid.getChildren().addAll(q1,button2,button3,button4,button5,buttonE);
-		//FinalData
+        grid.getChildren().addAll(q1,qt1,w1,qw1,q2,qt2,w2,qw2,target,tTarget,fail);
+        FinalData = new Scene(grid,500,250);
+        
+		//FinalData}
+        
 		
-		window.initModality(Modality.APPLICATION_MODAL);
 		if(first) {
 			window.setScene(FinalData);
 			window.setTitle("Final Grade Calculater - Offline");
@@ -175,8 +194,6 @@ public class sidProjs{
 			window.setTitle("Snow Day Percent Calculater!!!");
 			window.setScene(NoSnowDay);
 		}
-		window.setMinWidth(250);
-		window.setMinHeight(250);
 		
 		window.show();
 	}
