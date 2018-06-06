@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
@@ -6,7 +7,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+
 import java.util.Random;
 
 
@@ -116,22 +121,38 @@ public class sidProjs{
         truth.setOnAction(e -> {
         	window.hide();
         	JFrame s = new JFrame();
-        	JOptionPane.showMessageDialog(s, ".");
-            JOptionPane.showMessageDialog(s, "..");
-            JOptionPane.showMessageDialog(s, "...");
-            int input = JOptionPane.showConfirmDialog(null, "Are you Absolutely Sure??");
-            if(input == 0){
-                JOptionPane.showMessageDialog(s, "Seriusly????... huh...");
-                JOptionPane.showMessageDialog(s, "0%");
-                System.exit(0);
-            }
-            if(input == 1){
-                window.setScene(great);
-                window.show();
-            }
-            if(input == 2){
-                System.exit(0);
-            }
+        	
+        	Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Snowday Calculater... ERROR");
+			alert.setHeaderText("WARNING!");
+			alert.setContentText(".");
+			alert.showAndWait();
+			
+			alert.setContentText("..");
+			alert.showAndWait();
+			
+			alert.setContentText("...");
+			alert.showAndWait();
+			
+			alert = new Alert(AlertType.CONFIRMATION);
+			alert.setContentText("Are you Absolutely Sure??");
+			alert.setHeaderText("Confirmation Window 2.3.1");
+			alert.showAndWait().ifPresent(response ->{
+				if(response == ButtonType.OK) {
+					whatever();
+				}
+				else {
+					window.setScene(great);
+					window.show();
+					try{
+						Thread.sleep(5000);
+						System.exit(0);
+					}
+					catch(InterruptedException a) {
+						int d = 0;
+					}
+				}
+			});
         });
         
         //NoSnowDay}
@@ -140,11 +161,24 @@ public class sidProjs{
 			window.setScene(FinalData);
 			window.setTitle("Final Grade Calculater - Offline");
 		}
-		
 		else {
 			window.setTitle("Snow Day Percent Calculater!!!");
 			window.setScene(NoSnowDay);
 		}
 		window.show();
+	}
+	public static void whatever() {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("ERRORERRORERRORERRORERRORERRORERRORERROR");
+		alert.setHeaderText("WARNING!WARNING!WARNING!WARNING!WARNING!");
+		alert.setContentText("Seriusly????... huh...");
+		alert.showAndWait();
+		alert.setTitle("");
+		alert.setHeaderText("");
+		alert.setContentText("");
+		alert.showAndWait();
+		alert.setContentText("0%");
+		alert.showAndWait();
+		System.exit(0);
 	}
 }

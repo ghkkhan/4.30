@@ -1,6 +1,7 @@
 import javax.swing.*;
 
 
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -102,39 +103,43 @@ public class mainGUI extends Application{
     Button buttonE;
     String[] args;
     
+    Stage window = new Stage();
+    
     public static void boot(String[] args){
         launch(args);
     }
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.setTitle("4.30 - A Free Pass Through High School");
+        window = primaryStage;
+    	window.setTitle("4.30 - A Free Pass Through High School");
         button1 = new Button("Make Me My Physics Lab");
         button1.setOnAction(e -> {
-            //Phcs.OperationMakePhysicsLab();
+        	getPrem.getNume(window);
+        	//Phcs.OperationMakePhysicsLab(window);
         });
         
         button2 = new Button("Final grade Calculater");
         button2.setOnAction(e -> {
         	sidProjs.display(true);
-        	primaryStage.hide();
+        	window.hide();
 
         });
         
         button3 = new Button("Snowday Percent Calculater");
         button3.setOnAction(e -> {
         	sidProjs.display(false);
-        	primaryStage.hide();
+        	window.hide();
 
         });
         
         button4 = new Button("Social Simulater");
         button4.setOnAction(e -> {
-        	primaryStage.hide();
+        	window.hide();
         	//RealChatter r = new RealChatter();
         });
         
         button5 = new Button("Credits");
         button5.setOnAction(e -> {
-        	primaryStage.hide();
+        	window.hide();
         	//Creds.rollCreds();
         });
         
@@ -161,7 +166,7 @@ public class mainGUI extends Application{
         //layout.getChildren().addAll(button1,button2,button3,button4,button5);
         
         Scene scene = new Scene(grid,600,120);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        window.setScene(scene);
+        window.show();
     }
 }
