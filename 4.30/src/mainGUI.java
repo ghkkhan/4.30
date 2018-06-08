@@ -120,14 +120,14 @@ public class mainGUI extends Application{
         button2 = new Button("Final grade Calculater");
         button2.setOnAction(e -> {
         	sidProjs.display(true);
-        	window.hide();
+        	//window.hide();
 
         });
         
         button3 = new Button("Snowday Percent Calculater");
         button3.setOnAction(e -> {
         	sidProjs.display(false);
-        	window.hide();
+        	//window.hide();
 
         });
         

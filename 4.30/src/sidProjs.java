@@ -1,9 +1,11 @@
 import javax.swing.*;
 
+
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,7 +19,6 @@ import java.util.Random;
 
 public class sidProjs{
 	Stage window;
-	private static boolean noBool = true;
 	private static Grades g=new Grades();
 	private static Scene FinalData,FinalAnswer,NoSnowDay, great;
 
@@ -44,8 +45,6 @@ public class sidProjs{
             g.calculateFinal();
             String ans = "The Final grade you need to get is " + g.getFinalGrade() + "?";
             window.setScene(new Scene(new Label(ans)));
-            System.exit(0);
-			
 		});
 		
 		GridPane grid = new GridPane();
@@ -103,14 +102,20 @@ public class sidProjs{
         NoSnowDay = new Scene(grid2,500,220);
         
         //great code
-        VBox greatFrame = new VBox();
+        GridPane greatFrame = new GridPane();
+        Label gret = new Label("Great!");
+        gret.setFont(new Font("Arial", 50));
         Button ok = new Button("OK!");
-	    ok.setOnAction(e -> {
+        greatFrame.setConstraints(gret, 1, 0,3,1);
+        greatFrame.setConstraints(ok, 2, 1);
+        greatFrame.getColumnConstraints().add(new ColumnConstraints(110));
+        greatFrame.getColumnConstraints().add(new ColumnConstraints(50));
+        ok.setOnAction(e -> {
 	    	window.hide();
 	      	System.exit(0);
 	    });
-        greatFrame.getChildren().addAll(new Label("Great!"), ok);
-        great = new Scene(greatFrame,350,60);
+        greatFrame.getChildren().addAll(gret, ok);
+        great = new Scene(greatFrame,350,95);
                 
         lie.setOnAction(e -> {
         	window.setTitle("GREAT!!!");
@@ -144,13 +149,6 @@ public class sidProjs{
 				else {
 					window.setScene(great);
 					window.show();
-					try{
-						Thread.sleep(5000);
-						System.exit(0);
-					}
-					catch(InterruptedException a) {
-						int d = 0;
-					}
 				}
 			});
         });

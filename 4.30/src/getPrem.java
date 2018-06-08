@@ -90,6 +90,7 @@ public class getPrem{
 		});
 	}
 	public static void getTile(Stage window) {
+		tField.setPrefWidth(300);
 		text.setText(l1);
 		
 		bird1.setConstraints(text, 0, 0,3,1);
@@ -109,6 +110,11 @@ public class getPrem{
 	}
 	public static void getAuthor(Stage window) {
 		text.setText(l2);
+		
+		bird2.setConstraints(text, 0, 0,3,1);
+		bird2.setConstraints(tField,0,1);
+		bird2.setConstraints(okB2,1,1); 
+		
 		bird2.getChildren().addAll(text,tField,okB2);
 		getAuth = new Scene(bird2,600,100);
 		window.setScene(getAuth);
@@ -122,6 +128,11 @@ public class getPrem{
 
 	public static void getDate(Stage window) {
 		text.setText(l3);
+		
+		bird3.setConstraints(text, 0, 0,3,1);
+		bird3.setConstraints(tField,0,1);
+		bird3.setConstraints(okB3,1,1);
+		
 		bird3.getChildren().addAll(text,tField,okB3);
 		getDate = new Scene(bird3,600,100);
 		window.setScene(getDate);
@@ -134,6 +145,11 @@ public class getPrem{
 	}
 	public static void getPartner(Stage window) {
 		text.setText(l4);
+		
+		bird4.setConstraints(text, 0, 0,3,1);
+		bird4.setConstraints(tField,0,1);
+		bird4.setConstraints(okB4,1,1); 
+		
 		bird4.getChildren().addAll(text,tField,okB4);
 		getPartner = new Scene(bird4,600,100);
 		window.setScene(getPartner);

@@ -221,6 +221,9 @@ public class Phcs {
         grid.setHgap(12);
         
         intro = new Button("Introduction");
+        intro.setOnAction(e ->{
+        	
+        });
         equip = new Button("Equiptment");	
         meth = new Button("Math Analysis");
         hyp = new Button("Hypothesis");
@@ -240,7 +243,6 @@ public class Phcs {
         err.setMinWidth(size);
         done.setMinWidth(size);
         
-               
         GridPane.setConstraints(l1, 0, 0);
         GridPane.setConstraints(chosePart, 1, 0);
         GridPane.setConstraints(l2, 0, 1, 2,1);
@@ -259,6 +261,3 @@ public class Phcs {
 		
 	}
 }
-
-
-
