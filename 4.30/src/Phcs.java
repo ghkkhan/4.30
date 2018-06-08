@@ -178,9 +178,7 @@ public class Phcs extends JFrame{
             }
         }
     }
-    public static int getCPart(){
-        return cPart;
-    }
+
 }
 */
 
@@ -189,7 +187,6 @@ public class Phcs {
 	
 	public static DataBank[] parts = new DataBank[10];
     public static int subNum;
-    private static String[] partName = new String[10];
     public static int cPart;
     
     public static String title;
@@ -205,6 +202,7 @@ public class Phcs {
     private static Label l1 = new Label("Chose the Part of the Lab ---->");
     private static Label l2 = new Label("Go through each section and Fill in your Data");
     
+    
     public static Stage window;
 	public static void OperationMakePhysicsLab(Stage primaryStage){
 		
@@ -214,6 +212,14 @@ public class Phcs {
 		for(int i = 1; i<=subNum;i++){
 			chosePart.getItems().add("Part " + i );
 		}
+		chosePart.setOnAction(e -> {
+			for(int i = 0; i < subNum; i++) {
+				if(chosePart.getValue().equals("Part " + (i+1))) {
+					cPart = i + 1;
+					break;
+				}
+			}
+		});
 		chosePart.setValue("Part 1");
 		grid = new GridPane();
         grid.setPadding(new Insets(10, 10, 10, 10));
@@ -222,7 +228,7 @@ public class Phcs {
         
         intro = new Button("Introduction");
         intro.setOnAction(e ->{
-        	
+        	introFrame.writeIntro(parts, subNum, cPart);
         });
         equip = new Button("Equiptment");	
         meth = new Button("Math Analysis");
@@ -260,4 +266,7 @@ public class Phcs {
         window.show();
 		
 	}
+    public static int getCPart(){
+        return cPart;
+    }
 }
