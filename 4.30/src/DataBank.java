@@ -13,12 +13,12 @@ public class DataBank{
     private String explan;
     private String relation="positive"; // either "positive" or "negative" //new
     
-    private String Equipment;
+    private String Equipment = "";
     private String[] Equiptment;
 
     private String Diagram = "diagram placeholder";
 
-    private String Procedure;
+    private String Procedure = "";
 
     private double Slope;
     private double yInt; //changed from yInersept to yInt

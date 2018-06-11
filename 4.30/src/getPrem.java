@@ -1,4 +1,5 @@
 import javafx.scene.Scene;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -72,6 +73,7 @@ public class getPrem{
 		
 		getNum = new Scene(bird0,500, 90);
 		window.setScene(getNum);
+		window.setTitle("Preleminary Data Gatheration!");
 		window.show();
 		
 		okB0.setOnAction(e ->{
@@ -84,7 +86,7 @@ public class getPrem{
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Incorrect Input");
 				alert.setHeaderText(null);
-				alert.setContentText("What you have entered is not strictly a number. Check again");
+				alert.setContentText("Error: What you have entered is not strictly a number. Check again!");
 				alert.showAndWait();
 			}
 		});

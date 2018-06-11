@@ -97,11 +97,7 @@ public class Phcs extends JFrame{
         Date = JOptionPane.showInputDialog("Enter the date at which this Lab took place:");
         LabPartner = JOptionPane.showInputDialog("Enter the name of the lab partner:");
 
-        for(int i =0; i<subNum; i++){
-            parts[i] = new DataBank();
-            partName[i] = "part "+ (i+1);
-            //System.out.println("fefef");
-        }
+        
         Pframe = new Phcs();
         Pframe.setTitle("Physics Perfect Lab Maker. v4.30");
         Pframe.setSize(800, 250);
@@ -185,7 +181,7 @@ public class Phcs extends JFrame{
 public class Phcs {
 	//Variables and such
 	
-	public static DataBank[] parts = new DataBank[10];
+	public static DataBank[] parts;
     public static int subNum;
     public static int cPart;
     
@@ -199,23 +195,24 @@ public class Phcs {
     private static Scene main;
     private static Button intro,equip,meth,hyp,proc,err, done;
     private static ComboBox<String> chosePart = new ComboBox<>();
-    private static Label l1 = new Label("Chose the Part of the Lab ---->");
+    private static Label l1 = new Label("Choose the Part of the Lab ---->");
     private static Label l2 = new Label("Go through each section and Fill in your Data");
     
     
     public static Stage window;
 	public static void OperationMakePhysicsLab(Stage primaryStage){
-		
+		parts = new DataBank[subNum];
 		window = primaryStage;
 		
 		window.hide();
-		for(int i = 1; i<=subNum;i++){
-			chosePart.getItems().add("Part " + i );
+		for(int i = 0; i<subNum;i++){
+			chosePart.getItems().add("Part " + (i+1));
+			parts[i] = new DataBank();
 		}
 		chosePart.setOnAction(e -> {
 			for(int i = 0; i < subNum; i++) {
 				if(chosePart.getValue().equals("Part " + (i+1))) {
-					cPart = i + 1;
+					cPart = i;
 					break;
 				}
 			}
@@ -230,13 +227,31 @@ public class Phcs {
         intro.setOnAction(e ->{
         	introFrame.writeIntro(parts, subNum, cPart);
         });
-        equip = new Button("Equiptment");	
+        equip = new Button("Equiptment");
+        equip.setOnAction(e -> {
+        	EquipFrame.equipt(parts,subNum,cPart);
+        });
         meth = new Button("Math Analysis");
+        meth.setOnAction(e -> {
+        	MethFrame.makeMeth(parts, subNum, cPart);
+        });
         hyp = new Button("Hypothesis");
+        hyp.setOnAction(e -> {
+        	HypoFrame.writeHypo(parts, subNum, cPart);
+        });
         proc = new Button("Procedure");
+        proc.setOnAction(e-> {
+        	ProcFrame.writeProcedure(parts, subNum, cPart);
+        });
         err = new Button("Error Calculations");
+        err.setOnAction(e -> {
+        	ECalFrame.makeErrorCalculationFramePlease(parts, subNum, cPart);
+
+        });
         done = new Button("Done?");
-        
+        done.setOnAction(e ->{
+        	LGH.letsGoHounds(parts, subNum, cPart);
+        });
         int size = 200;
         
         chosePart.setMinWidth(size);
@@ -263,10 +278,14 @@ public class Phcs {
         grid.getChildren().addAll(l1,chosePart,l2,intro,hyp,equip,proc,meth,err,done);
         main = new Scene(grid,450, 250);
         window.setScene(main);
+        window.setTitle("Physics Perfect Lab Maker. v4.30");
         window.show();
-		
 	}
-    public static int getCPart(){
-        return cPart;
-    }
+	public static void goForIt() {
+		//woiefjaowg
+		LabMaker tempLab=new LabMaker(parts, title, Author, Date, LabPartner,subNum);
+        System.out.println(tempLab.getPrint());
+        LabWriter.writeString(tempLab.getPrint());
+        LabWriter.saveAndClose();
+	}
 }

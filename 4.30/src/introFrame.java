@@ -1,81 +1,81 @@
-import javax.swing.*;
 
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.geometry.Insets;
 
-import java.awt.*;
-import java.awt.event.*;
-/*
-public class introFrame extends JFrame{
-	
-    public static introFrame introframe;
-    public static DataBank[] parts;
-    public static int cPart;
-    public static int numLab;
-    public static JTextField indVar;
-    public static JTextField depVar;
-    public static JTextField explainSent;
-    
-    public introFrame(){
-        indVar = new JTextField(parts[cPart].getiVariable());
-        depVar = new JTextField(parts[cPart].getdVariable());
-        explainSent= new JTextField(parts[cPart].getExplan());
-        
-        setLayout(new GridLayout(5,2,5,5));
-        ListenerClass listener = new ListenerClass();
-        add(new JLabel("Enter the values mentioned beside the text bars"));
-        add(new JLabel("Make sure not to type words where numbers ought to be. Vice versa"));
-        add(new JLabel("Enter the Independent Variable:"));
-        add(indVar);
-        add(new JLabel("Enter the Dependent Variable:"));
-        add(depVar);
-        add(new JLabel("Enter the description sentence:"));
-        add(explainSent);
-        JButton done = new JButton("Done?");
-        add(done);
-        done.addActionListener(listener);
-    }
-    public static void writeIntro(DataBank[] s, int numberoflabs, int currentpart){
-        parts = s;
-        cPart = currentpart;
-        numLab = numberoflabs;
-        
-        introframe = new introFrame();
-        introframe.setTitle("Physics Perfect Lab Maker. v4.30");
-        introframe.setSize(1000, 300);
-        introframe.setLocationRelativeTo(null);
-        introframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        introframe.setVisible(true);
-    }
-    class ListenerClass implements ActionListener{
-        public void actionPerformed(ActionEvent e){
-            if(e.getActionCommand() == "Done?"){
-                introframe.setVisible(false);
-                
-                parts[cPart].setiVariable((indVar.getText()));
-                indVar.setText("");
-                parts[cPart].setdVariable((depVar.getText()));
-                depVar.setText("");
-                parts[cPart].setExplan((explainSent.getText()));
-                explainSent.setText("");
-                
-            }
-        }
-    }
-}
-*/
-public class introFrame extends JFrame{
+public class introFrame{
 		
-	public static DataBank[] parts;
+	public static DataBank[] parts;;
 	public static int cPart;
 	public static int numLab;
-		
+	public static TextField indVar;
+	public static TextField depVar;
+	public static TextField explainSent ;
+	public static Label l1;
+	public static Label l2;
+	public static Label l3;
+	public static Label l4;
+	public static Button done;
+
 	public introFrame(){
 	}
 	public static void writeIntro(DataBank[] s, int numberoflabs, int currentpart){
-	
+		//just some variable assignations
+		
 		parts = s;
 		cPart = currentpart;
 		numLab = numberoflabs;
-	
+		
+		indVar = new TextField(parts[cPart].getiVariable());
+        depVar = new TextField(parts[cPart].getdVariable());
+        explainSent = new TextField(parts[cPart].getExplan());
+        
+        l1 = new Label("Enter the values mentioned beside the Textfields!");
+        l2 = new Label("Enter the Independent Variable:");
+        l3 = new Label("Enter the Dependent Variable:");
+        l4 = new Label("Enter the Description Sentence:");
+        done = new Button("Done!");
+        
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10,10,10,10));
+        grid.setVgap(10);
+        grid.setHgap(12);
+        int size = 400;
+        grid.setConstraints(l1, 0, 0,2,1);
+        grid.setConstraints(l2, 0, 1);
+        grid.setConstraints(indVar, 1, 1);
+        grid.setConstraints(l3, 0, 2);
+        grid.setConstraints(depVar, 1, 2);
+        grid.setConstraints(l4, 0, 3);
+        grid.setConstraints(explainSent, 1, 3);
+        grid.setConstraints(done, 0, 4);
+        grid.getChildren().setAll(l1,l2,l3,l4,indVar,depVar,explainSent,done);
+        indVar.setMinWidth(size);
+        depVar.setMinWidth(size);
+        explainSent.setMinWidth(size);
+        
+        Scene intro = new Scene(grid,650, 205);
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setScene(intro);
+        window.setTitle("Introduction Sequencing");
+        window.show();
+        
+        //done button click
+        done.setOnAction(e ->{
+        	
+        	window.hide();
+            parts[cPart].setiVariable((indVar.getText()));
+            indVar.setText("");
+            parts[cPart].setdVariable((depVar.getText()));
+            depVar.setText("");
+            parts[cPart].setExplan((explainSent.getText()));
+            explainSent.setText("");
+        });
 	}
 }

@@ -7,20 +7,20 @@
 public class LabMaker
 {
     //OUTPUTS
-    private String Header ="";
-    private String Purpose="";
-    private String Hypothesis ="";
-    private String Materials="";
-    private String Diagram ="";
-    private String Procedure ="";
-    private String mA=""; //math analysis
-    private String errorCalcs="";
-    private String eA=""; //error analysis
+    private String Header;
+    private String Purpose;
+    private String Hypothesis;
+    private String Materials;
+    private String Diagram ;
+    private String Procedure;
+    private String mA; //math analysis
+    private String errorCalcs;
+    private String eA; //error analysis
 
-    private String Conclusion="";
-    private String Claim="";
-    private String Evidence="";
-    private String Reasoning="";
+    private String Conclusion;
+    private String Claim;
+    private String Evidence;
+    private String Reasoning;
     
     private String Print;
 

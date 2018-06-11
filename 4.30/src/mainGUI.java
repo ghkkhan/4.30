@@ -109,8 +109,10 @@ public class mainGUI extends Application{
         launch(args);
     }
     public void start(Stage primaryStage) throws Exception{
+    	
+    	
         window = primaryStage;
-    	window.setTitle("4.30 - A Free Pass Through High School");
+    	window.setTitle("4.30");
         button1 = new Button("Make Me My Physics Lab");
         button1.setOnAction(e -> {
         	getPrem.getNume(window);
@@ -162,10 +164,8 @@ public class mainGUI extends Application{
         
         grid.getChildren().addAll(button1,button2,button3,button4,button5,buttonE);
         
-        //VBox layout = new VBox();
-        //layout.getChildren().addAll(button1,button2,button3,button4,button5);
-        
         Scene scene = new Scene(grid,600,120);
+        scene.getStylesheets().add("Viper.css");
         window.setScene(scene);
         window.show();
     }

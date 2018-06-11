@@ -1,0 +1,176 @@
+Title: TestLab
+Author: Huzaifa Khan
+Date Performed: 6/11/2018
+Lab Partner: Ian Hudson
+
+Purpose:
+nullThere were 2 objectives in this lab. 
+In part 1 we were to determine the relationship between IV1 and DV1. 
+We will increase the IV1 incrementally and check its affects on DV1
+In part 2 we were to determine the relationship between IV2 and DV2. 
+We will increse IV2 and check its effects on DV2.
+
+
+Hypothesis:
+null
+
+Materials:
+nulllaptop
+ fan
+ mouse
+ earbuds
+Brain
+ chair
+ keyboard
+ mousepad
+ phone
+
+
+Procedure:
+nullTHIS is procedure for the first part. I'll try to keep this brief as possible but still, please remember that this is still procedure one.
+The only difference in procedure one and two will  be that that will say that it is procedure 2.... Bue.This is the start of Procedure 2. I cannot write anymore than this. this is the end of procedure 2.
+
+Diagram:
+
+
+Mathematical Analysis:
+null$ V \to \text{Velocity} \newline$
+$ T \to \text{Time} \newline$
+$ y = mx + b \newline$
+$ V = k* T + b\newline$
+$ k = \frac{\Delta V}{\Delta T} \newline$
+$ k = 4.453 \frac{m/s}{s} \hspace{0.25cm}\text{slope calculated by logger pro} \newline$
+$ b = 25.53 25.53 \hspace{0.25cm}\text{y-intercept calculated by logger pro}\newline$
+$ V = 4.453 \frac{m/s}{s} * T + 25.53 m/s$
+
+$ D \to \text{Distance} \newline$
+$ T \to \text{Time} \newline$
+$ y = mx + b \newline$
+$ D = k* T + b\newline$
+$ k = \frac{\Delta D}{\Delta T} \newline$
+$ k = 3.0 \frac{efaw}{wafe} \hspace{0.25cm}\text{slope calculated by logger pro} \newline$
+$ b = 10.0 10.0 \hspace{0.25cm}\text{y-intercept calculated by logger pro}\newline$
+$ D = 3.0 \frac{efaw}{wafe} * T + 10.0 efaw$
+
+
+
+Error Calculations:
+null
+
+Experimental Value: Slope of Velocity vs. Time graph
+Experimental Value: 4.453 m/s/s
+Accepted Value: The Slope is the acceleration... duh.
+Accepted Value: 5.0 m/s/s
+
+Absolute Error:
+Absolute Error = |accepted value - experimental value|
+Absolute Error = |4.453 m/s/s - 5.0 m/s/s|
+Absolute Error = 0.5469999999999997 m/s/s
+
+Relative Error
+Relative Error = (Absolute Error)/(Accepted Value)
+Relative Error = (0.5469999999999997 m/s/s)/(5.0 m/s/s)
+Relative Error = 0.10939999999999994
+Relative Error = 10.939999999999994% 
+
+
+Experimental Value: y-intercept of Velocity vs. Time graph
+Experimental Value: 25.53 m/s
+Accepted Value: The y-Intercept is the slope value squared
+Accepted Value: 25.0 m/s
+
+Absolute Error:
+Absolute Error = |accepted value - experimental value|
+Absolute Error = |25.53 m/s - 25.0 m/s|
+Absolute Error = 0.5300000000000011 m/s
+
+Relative Error
+Relative Error = (Absolute Error)/(Accepted Value)
+Relative Error = (0.5300000000000011 m/s)/(25.0 m/s)
+Relative Error = 0.021200000000000045
+Relative Error = 2.1200000000000045% 
+
+
+Experimental Value: Slope of Distance vs. Time graph
+Experimental Value: 3.0 efaw/wafe
+Accepted Value: the significance of the slope is Velocity of the thing, right?
+Accepted Value: 3.0 efaw/wafe
+
+Absolute Error:
+Absolute Error = |accepted value - experimental value|
+Absolute Error = |3.0 efaw/wafe - 3.0 efaw/wafe|
+Absolute Error = 0.0 efaw/wafe
+
+Relative Error
+Relative Error = (Absolute Error)/(Accepted Value)
+Relative Error = (0.0 efaw/wafe)/(3.0 efaw/wafe)
+Relative Error = 0.0
+Relative Error = 0.0% 
+
+
+Experimental Value: y-intercept of Distance vs. Time graph
+Experimental Value: 10.0 efaw
+Accepted Value: The Y-intercept is the starting positional value, right?
+Accepted Value: 10.0 efaw
+
+Absolute Error:
+Absolute Error = |accepted value - experimental value|
+Absolute Error = |10.0 efaw - 10.0 efaw|
+Absolute Error = 0.0 efaw
+
+Relative Error
+Relative Error = (Absolute Error)/(Accepted Value)
+Relative Error = (0.0 efaw)/(10.0 efaw)
+Relative Error = 0.0
+Relative Error = 0.0% 
+
+
+Error Analysis:
+One source of error could have been [reason].
+This would have caused [variable] to be [larger/smaller] than its true value.
+Another source of error could have been [reason].
+This would have caused [variable] to be [larger/smaller] than its true value.
+
+Conclusion:
+
+EDIT ME TO SOUND LESS AUTO GENERATED!!
+
+Restatement of purpose:
+nullThere were 2 objectives in this lab. 
+In part 1 we were to determine the relationship between IV1 and DV1. 
+We will increase the IV1 incrementally and check its affects on DV1
+In part 2 we were to determine the relationship between IV2 and DV2. 
+We will increse IV2 and check its effects on DV2.
+
+
+Restatement of hypothesis:
+null
+
+Brief description of experiment:
+
+[EDIT ME DOWN!]
+nullTHIS is procedure for the first part. I'll try to keep this brief as possible but still, please remember that this is still procedure one.
+The only difference in procedure one and two will  be that that will say that it is procedure 2.... Bue.This is the start of Procedure 2. I cannot write anymore than this. this is the end of procedure 2.
+
+Claim:
+nullAs IV1 increases, DV1 decreases.
+As IV2 increases, DV2 decreases.
+
+
+Evidence:
+nullThe Velocity vs Time graph was linear, with a slope of 4.453 m/s/s that had a relative error of 10.939999999999994% off of the accepted value for The Slope is the acceleration... duh. after error analysis, and a negligible y-intercept.
+The Distance vs Time graph was linear, with a slope of 3.0 efaw/wafe that had a relative error of 0.0% off of the accepted value for the significance of the slope is Velocity of the thing, right? after error analysis, and a negligible y-intercept.
+
+
+Reasoning:
+nullLinearity and a negligible y-intercept in the Velocity vs Time graph indicates that Velocity and Time are directly proportional. The low relative error when compared to the accepted value of The Slope is the acceleration... duh. indicates that the physical significance of the slope of a Velocity vs Time graph is the The Slope is the acceleration... duh..
+Linearity and a negligible y-intercept in the Distance vs Time graph indicates that Distance and Time are directly proportional. The low relative error when compared to the accepted value of the significance of the slope is Velocity of the thing, right? indicates that the physical significance of the slope of a Distance vs Time graph is the the significance of the slope is Velocity of the thing, right?.
+
+
+Addressing the Hypothesis
+The data does not support the hypothesis.
+
+Summary of Results Reached:
+After observing [what you observed], we found that:
+bullet point 1 (ex: Total momentum is conserved in every interaction)
+bullet point 2 (ex: translational kinetic energy is conserved in elastic collisions)
