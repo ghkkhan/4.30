@@ -1,39 +1,37 @@
-//import javax.swing.*;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.lang.Math;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
-
-public class RealChatter extends Application
+/**
+ * Write a description of class RealChatter here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class RealChatter extends JFrame
 {
-    Panel p = new Panel(new GridBagLayout());
+    JPanel p = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
     
     public static ListenerClass listener;
     
     ArrayList<String> outputs = new ArrayList<String>();
     
-    Label l0 = new Label("<html><MARQUEE><FONT COLOR=RED>Social</FONT> <FONT COLOR=BLUE>Simulator:</FONT></MARQUEE></HTML>");
-    Label l1 = new Label(" ");
-    Label l2 = new Label(" ");
-    Label l3 = new Label(" ");
-    Label l4 = new Label(" ");
-    Label l5 = new Label(" ");
-    Label l6 = new Label(" ");
-    Label l7 = new Label(" ");
-    Label l8 = new Label(" ");
-    TextArea ta = new TextArea("input",1,30);
-    Button b = new Button("Enter");
-    Button b2 = new Button("Safe Mode");
-    Label l9 = new Label("<html>Safe Mode: On<html>");
+    JLabel l0 = new JLabel("<html><MARQUEE><FONT COLOR=RED>Social</FONT> <FONT COLOR=BLUE>Simulator:</FONT></MARQUEE></HTML>");
+    JLabel l1 = new JLabel(" ");
+    JLabel l2 = new JLabel(" ");
+    JLabel l3 = new JLabel(" ");
+    JLabel l4 = new JLabel(" ");
+    JLabel l5 = new JLabel(" ");
+    JLabel l6 = new JLabel(" ");
+    JLabel l7 = new JLabel(" ");
+    JLabel l8 = new JLabel(" ");
+    JTextArea ta = new JTextArea("input",1,30);
+    JButton b = new JButton("Enter");
+    JButton b2 = new JButton("Safe Mode");
+    JLabel l9 = new JLabel("<html>Safe Mode: On<html>");
     //JLabel l9 = new JLabel("<html><FONT COLOR=RED>Red</FONT> and <FONT COLOR=BLUE>Blue</FONT> Text</html>");
     
     private String asmr = "Did you try turning it off and on again?^Kick it as hard as you can^Mash all the buttons^Have you tried tasting it?^Have you tried drinking your "
