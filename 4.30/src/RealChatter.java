@@ -144,6 +144,7 @@ public class RealChatter extends JFrame
                     l5.setText(l7.getText());
                     l6.setText(l8.getText());
                     l7.setText(ta.getText());
+                    ta.setText("");
                     if(safeMode == 1)
                     {
                         boolean safeIntFound = false;
@@ -167,7 +168,7 @@ public class RealChatter extends JFrame
                     }
                     
                     
-                    ta.setText("");
+                    
                 }
                 //System.out.println("Asdf");
             }
