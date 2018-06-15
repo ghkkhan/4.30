@@ -12,11 +12,11 @@ import java.math.*;
 public class soundTrial extends JApplet{
     public static AudioClip audio;
     private String[] audioList;
-    private static String[] backgroundSongs = {"/Songs/Richard-Wagner-Ride-Of-The-Valkyries.wav", " ", " "};
+    /* PUT BACKGROUND MUSIC HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    private static String[] backgroundSongs = {"/SoundFiles/1.wav","/SoundFiles/2.wav","/SoundFiles/3.wav","/SoundFiles/4.wav","/SoundFiles/5.wav","/SoundFiles/6.wav","/SoundFiles/7.wav","/SoundFiles/8.wav","/SoundFiles/9.wav","/SoundFiles/10.wav","/SoundFiles/11.wav","/SoundFiles/12.wav"};
     private int backgroundSongIndex = 0;
     //private static String vicSong = "/Songs/MOZART 12 Variations on Ah vous dirai-je Maman K265 Alberto Lodoletti piano.aiff";
     //int i = (int)(Math.random()*2);
-    
     private void createAudioList()
     {
         audioList = new String[60];
@@ -27,19 +27,36 @@ public class soundTrial extends JApplet{
             audioList[i] = tempString;
         }
     }
-    
-    public void changeBackgroundSongIndex(int delta)
+    public void nextBackgroundSong()
     {
-        backgroundSongIndex += delta;
+        // System.out.println("length"+backgroundSongs.length);
+        // System.out.println("index"+backgroundSongIndex);
+        if(backgroundSongIndex == backgroundSongs.length-1)
+        {
+            backgroundSongIndex=0;
+        }
+        else
+        {
+            backgroundSongIndex++;
+        }
     }
-    
+    public void previousBackgroundSong()
+    {
+        if(backgroundSongIndex == 0)
+        {
+            backgroundSongIndex=backgroundSongs.length;
+        }
+        else
+        {
+            backgroundSongIndex--;
+        }
+    }
     public soundTrial(){
         createAudioList();
         /*URL urlForAudio = getClass().getResource(audioList[i]);    
         audio = Applet.newAudioClip(urlForAudio);
         audio.loop();*/
     }
-    
     public void playSong(int index)
     {
         if(audio!=null)audio.stop();

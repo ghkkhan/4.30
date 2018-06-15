@@ -54,11 +54,12 @@ public class BackGroundMusic extends JFrame
                 backgroundMusic.stopBackgroundMusic();
             }
             if(e.getActionCommand() == "Next Song"){
-                backgroundMusic.changeBackgroundSongIndex(1);
+                backgroundMusic.nextBackgroundSong();
                 backgroundMusic.playBackgroundMusic();
+                System.out.println("next");
             }
             if(e.getActionCommand() == "Previous Song"){
-                backgroundMusic.changeBackgroundSongIndex(-1);
+                backgroundMusic.previousBackgroundSong();
                 backgroundMusic.playBackgroundMusic();
             }
         }
