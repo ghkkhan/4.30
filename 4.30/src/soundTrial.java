@@ -13,19 +13,19 @@ public class soundTrial extends JApplet{
     public static AudioClip audio;
     private String[] audioList;
     /* PUT BACKGROUND MUSIC HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-    private static String[] backgroundSongs = {"/SoundFiles/1.wav","/SoundFiles/2.wav","/SoundFiles/3.wav","/SoundFiles/4.wav","/SoundFiles/5.wav","/SoundFiles/6.wav","/SoundFiles/7.wav","/SoundFiles/8.wav","/SoundFiles/9.wav","/SoundFiles/10.wav","/SoundFiles/11.wav","/SoundFiles/12.wav"};
+    private static String[] backgroundSongs = {"/Movie/1.wav","/Movie/2.wav","/Movie/3.wav","/Movie/4.wav","/Movie/5.wav","/Movie/6.wav","/Movie/7.wav","/Movie/8.wav","/Movie/9.wav","/Movie/10.wav"};
     private int backgroundSongIndex = 0;
-    //private static String vicSong = "/Songs/MOZART 12 Variations on Ah vous dirai-je Maman K265 Alberto Lodoletti piano.aiff";
-    //int i = (int)(Math.random()*2);
+
     private void createAudioList()
     {
         audioList = new String[60];
         String tempString;
         for(int i = 0; i <60; i++)
         {
-            tempString = System.getProperty("user.dir") + "/4.30/src/Movie/Recording (" + (i+4) + ").wav";
-	        tempString = tempString.replace("\\", "/");
+        	
+            tempString ="/Movie/Recording (" + (i+4) + ").wav";
             audioList[i] = tempString;
+            //System.out.println(audioList[i]);
         }
     }
     public void nextBackgroundSong()
@@ -63,6 +63,7 @@ public class soundTrial extends JApplet{
         if(audio!=null)audio.stop();
         //audioList[10]="/Songs/Richard-Wagner-Ride-Of-The-Valkyries.wav";
         URL urlForAudio = getClass().getResource(audioList[index]);
+
         audio = Applet.newAudioClip(urlForAudio);
         //if(audio != null) audio.loop();
         audio.play();
@@ -72,10 +73,12 @@ public class soundTrial extends JApplet{
     public void playBackgroundMusic(){
         if(audio!=null)audio.stop();
         URL urlForAudio = getClass().getResource(backgroundSongs[backgroundSongIndex]);
+        System.out.println(urlForAudio.toString());
         audio = Applet.newAudioClip(urlForAudio);
         if(audio != null) audio.loop();
     }
     public void stopBackgroundMusic(){
+    	if(audio!=null)
         audio.stop();
     }
     

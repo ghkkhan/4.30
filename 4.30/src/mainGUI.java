@@ -23,6 +23,7 @@ public class mainGUI extends Application{
     	
         window = primaryStage;
     	window.setTitle("4.30");
+    	BackGroundMusic k = new BackGroundMusic();
         button1 = new Button("Make Me My Physics Lab");
         button1.setOnAction(e -> {
         	getPrem.getNume(window);
@@ -51,6 +52,7 @@ public class mainGUI extends Application{
         button5 = new Button("Credits");
         button5.setOnAction(e -> {
         	window.hide();
+        	if(soundTrial.audio!=null) soundTrial.audio.stop();
         	Creds.rollCreds();
         });
         

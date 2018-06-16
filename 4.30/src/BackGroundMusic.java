@@ -27,10 +27,17 @@ public class BackGroundMusic extends JFrame
         p.add(nextSong);
         p.add(previousSong);
         
-        setSize(300,100);
+        setSize(300,140);
         add(p);
         setVisible(true);
-        
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent e) {
+            	if(soundTrial.audio!=null) {
+            		backgroundMusic.stopBackgroundMusic();
+            	}
+            	setVisible(false);
+            }
+        });
         listener = new ListenerClass();
         
         startSong.addActionListener(listener);
@@ -39,7 +46,12 @@ public class BackGroundMusic extends JFrame
         stopSong.addActionListener(listener);
     }
     
-    public static soundTrial getSound()
+    private int runExit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static soundTrial getSound()
     {
         return backgroundMusic;
     }
@@ -56,7 +68,7 @@ public class BackGroundMusic extends JFrame
             if(e.getActionCommand() == "Next Song"){
                 backgroundMusic.nextBackgroundSong();
                 backgroundMusic.playBackgroundMusic();
-                System.out.println("next");
+                //System.out.println("next");
             }
             if(e.getActionCommand() == "Previous Song"){
                 backgroundMusic.previousBackgroundSong();
