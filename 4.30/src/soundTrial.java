@@ -23,7 +23,8 @@ public class soundTrial extends JApplet{
         String tempString;
         for(int i = 0; i <60; i++)
         {
-            tempString = "/Songs/Recording (" + (i+4) + ").wav";
+            tempString = System.getProperty("user.dir") + "/4.30/src/Movie/Recording (" + (i+4) + ").wav";
+	        tempString = tempString.replace("\\", "/");
             audioList[i] = tempString;
         }
     }
