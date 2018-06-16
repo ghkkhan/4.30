@@ -119,6 +119,7 @@ public class sidProjs{
                 
         lie.setOnAction(e -> {
         	window.setTitle("GREAT!!!");
+        	window.setResizable(false);
         	window.setScene(great);
         });
         
@@ -157,10 +158,12 @@ public class sidProjs{
 		
 		if(first) {
 			window.setScene(FinalData);
+			window.setResizable(false);
 			window.setTitle("Final Grade Calculater - Offline");
 		}
 		else {
 			window.setTitle("Snow Day Percent Calculater!!!");
+			window.setResizable(false);
 			window.setScene(NoSnowDay);
 		}
 		window.show();

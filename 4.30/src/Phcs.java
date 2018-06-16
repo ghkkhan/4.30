@@ -278,6 +278,7 @@ public class Phcs {
         grid.getChildren().addAll(l1,chosePart,l2,intro,hyp,equip,proc,meth,err,done);
         main = new Scene(grid,450, 250);
         window.setScene(main);
+        window.setResizable(false);
         window.setTitle("Physics Perfect Lab Maker. v4.30");
         window.show();
 	}

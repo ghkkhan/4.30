@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="4.30/src"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/JMF2.1.1e/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Huzaifa/git/4.3000/vlcj-3.0.1-dist/vlcj-3.0.1/vlcj-3.0.1.jar"/>
 	<classpathentry kind="output" path="4.30/bin"/>
 </classpath>
