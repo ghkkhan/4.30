@@ -1,2 +1,29 @@
+<<<<<<< HEAD
 /Movie/
 /Images/
+=======
+/DataBank.class
+/ECalFrame.class
+/EquipFrame.class
+/FourPointThree.class
+/Grades.class
+/HypoFrame.class
+/LGH.class
+/LabMaker.class
+/LabWriter.class
+/MethFrame.class
+/Phcs.class
+/ProcFrame.class
+/Viper.css
+/getPrem.class
+/introFrame.class
+/mainGUI.class
+/sidProjs.class
+/Chatter.class
+/Chatter2.class
+/RealChatter$ListenerClass.class
+/RealChatter.class
+/soundTrial.class
+/BackGroundMusic.class
+/BackGroundMusic$ListenerClass.class
+>>>>>>> branch 'master' of https://github.com/ghkkhan/4.30.git

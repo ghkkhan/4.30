@@ -45,7 +45,7 @@ public class mainGUI extends Application{
         button4 = new Button("Social Simulater");
         button4.setOnAction(e -> {
         	window.hide();
-        	//RealChatter r = new RealChatter();
+        	RealChatter r = new RealChatter();
         });
         
         button5 = new Button("Credits");
