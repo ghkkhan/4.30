@@ -13,8 +13,9 @@ public class soundTrial extends JApplet{
     public static AudioClip audio;
     private String[] audioList;
     /* PUT BACKGROUND MUSIC HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-    private static String[] backgroundSongs = {"/Movie/1.wav","/Movie/2.wav","/Movie/3.wav","/Movie/4.wav","/Movie/5.wav","/Movie/6.wav","/Movie/7.wav","/Movie/8.wav","/Movie/9.wav","/Movie/10.wav"};
-    private int backgroundSongIndex = 0;
+    private static String[] backgroundSongs = {"/Movie/1.wav","/Movie/2.wav","/Movie/3.wav","/Movie/4.wav","/Movie/5.wav","/Movie/6.wav","/Movie/7.wav","/Movie/8.wav","/Movie/9.wav"};
+    public static String[] names = {"Snow Halation - Animenz","Everyday World - Animenz","Hello, Alone - Animenz","Popcorn - Animenz","Barcarolle - Offenbach","Nocturne 2 - Chopin","Salut D'Amour - Elgar","Pudi-Pudi - GOD","Friend - Animenz"};
+    public static int backgroundSongIndex = 0;
 
     private void createAudioList()
     {
@@ -22,7 +23,6 @@ public class soundTrial extends JApplet{
         String tempString;
         for(int i = 0; i <60; i++)
         {
-        	
             tempString ="/Movie/Recording (" + (i+4) + ").wav";
             audioList[i] = tempString;
             //System.out.println(audioList[i]);

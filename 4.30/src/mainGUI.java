@@ -19,11 +19,12 @@ public class mainGUI extends Application{
     public static void boot(String[] args){
         launch(args);
     }
-    public void start(Stage primaryStage) throws Exception{
-    	
+    public void start(Stage primaryStage){
+
         window = primaryStage;
     	window.setTitle("4.30");
-    	BackGroundMusic k = new BackGroundMusic();
+    	BackGroundMusic k = new BackGroundMusic(0);
+
         button1 = new Button("Make Me My Physics Lab");
         button1.setOnAction(e -> {
         	getPrem.getNume(window);
@@ -32,15 +33,11 @@ public class mainGUI extends Application{
         button2 = new Button("Final grade Calculater");
         button2.setOnAction(e -> {
         	sidProjs.display(true);
-        	//window.hide();
-
         });
         
         button3 = new Button("Snowday Percent Calculater");
         button3.setOnAction(e -> {
         	sidProjs.display(false);
-        	//window.hide();
-
         });
         
         button4 = new Button("Social Simulater");
